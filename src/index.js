@@ -1,5 +1,7 @@
 import store from './store';
 import { BUG_ADDED, BUG_REMOVE } from './actionTypes';
+import { bugAdded, bugResolved } from './actions';
+
 // if we console.log(store) we get an object with many methods.
 
 
@@ -35,3 +37,9 @@ store.dispatch({
   }
 })
 console.log(store);
+
+
+// TO CLEAN UP CODE USING action.js to store action object
+store.dispatch(bugAdded("Bug1"))
+
+store.dispatch(bugResolved(1));
