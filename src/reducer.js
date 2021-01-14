@@ -1,8 +1,9 @@
+import { BUG_ADDED, BUG_REMOVE } from './actionTypes';
 let lastId = 0;
 
 export default function reducer(state = [], action) {
   // the job of an action is to return a new state based on the action.
-  if (action.type === 'bugAdded') {
+  if (action.type === BUG_ADDED) {
     // we will return a new state.
     // we need to return a new state that is the copy of the old state with newly added data.
     return [
@@ -13,7 +14,7 @@ export default function reducer(state = [], action) {
         resolved: false
       }
     ]
-  } else if (action.type === 'bugRemoved') {
+  } else if (action.type === BUG_REMOVE) {
     // here we want to return a new state with all the bugs except the one that we want to remove.
     return state.filter(bug => bug.id !== action.payload.id)
   }
